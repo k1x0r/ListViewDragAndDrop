@@ -1,9 +1,8 @@
 package com.example.listviewdraganddrop.listview;
 
-import java.io.IOException;
 
+import com.example.listviewdraganddrop.R;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.AttributeSet;
@@ -31,13 +30,13 @@ public class ListViewItem extends LinearLayout {
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();
-
+		textData = (TextView)findViewById(R.id.textView1);
 	}
 	
-	public void setData(ListViewData tweet)
+	public void setData(ListViewData data)
 	{
-		this.data = tweet;
-		
+		this.data = data;
+		textData.setText(data.getText());
 	}
 		
 

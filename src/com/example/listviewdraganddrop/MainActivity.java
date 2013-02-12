@@ -6,7 +6,6 @@ import com.example.listviewdraganddrop.listview.ListViewData;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.View;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
@@ -33,7 +32,7 @@ public class MainActivity extends Activity {
 	
 	private void fillAdapter() {
 		for(int i = 0; i < 20; i++) {
-			listViewAdapter.add(new ListViewData());
+			listViewAdapter.add(new ListViewData("Item "+ i));
 		}
 	}
 
