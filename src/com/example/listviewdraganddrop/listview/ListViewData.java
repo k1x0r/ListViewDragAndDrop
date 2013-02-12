@@ -12,6 +12,8 @@ public class ListViewData {
 		this.text = text;
 	}
 	
+
+
 	public Bitmap getBitmap() {
 		return bitmap;
 	}
@@ -26,4 +28,17 @@ public class ListViewData {
 		this.text = text;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof ListViewData) {
+			return ((ListViewData) o).getText().equals(text);
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public int hashCode() {
+		return text.hashCode();
+	}
 }

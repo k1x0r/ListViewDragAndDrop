@@ -26,6 +26,20 @@ public class ListViewAdapter extends BaseAdapter {
     	list.add(data);
     }
     
+    public void replace(ListViewData el1, ListViewData el2) {
+    	
+    	System.out.println(list);
+    	
+    	int index1 = list.indexOf(el1);
+    	int index2 = list.indexOf(el2);
+    	list.set(index1, el2);
+    	list.set(index2, el1);
+    	
+    	System.out.println(index1 + " " + index2 + " " + list);
+    	
+    	notifyDataSetChanged();
+    }
+    
     public void clear()
     {
     	list.clear(); 	
@@ -57,7 +71,10 @@ public class ListViewAdapter extends BaseAdapter {
 		{
 			tweetItem = (ListViewItem)convertView;
 		}
+		
 		tweetItem.setData(list.get(position));
+		tweetItem.setAdapter(this);
+		
 		return tweetItem;
 	}
 	
