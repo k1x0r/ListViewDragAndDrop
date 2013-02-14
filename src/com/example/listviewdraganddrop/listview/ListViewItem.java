@@ -19,14 +19,8 @@ public class ListViewItem extends LinearLayout implements OnDragListener, OnLong
 
 	private ListViewData data;
 	private ListViewAdapter adapter;
-
 	private TextView textData;
-	private ImageView imageData;
 	private Context context;
-	private Bitmap bitmap;
-
-
-	String url;
 
 	private boolean containsDragable;
 	
@@ -80,7 +74,6 @@ public class ListViewItem extends LinearLayout implements OnDragListener, OnLong
 		return data;
 	}
 
-	
 	public void setData(ListViewData data)
 	{
 		this.data = data;

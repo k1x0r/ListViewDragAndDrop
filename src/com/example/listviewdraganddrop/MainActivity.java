@@ -5,13 +5,18 @@ import com.example.listviewdraganddrop.listview.ListViewData;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
 
 	private ListViewAdapter listViewAdapter;
 	private ListView listView;
+	private Button printButton;
 
 
 	@Override
@@ -26,6 +31,16 @@ public class MainActivity extends Activity {
 		listViewAdapter = new ListViewAdapter(this);
 		listView = (ListView)findViewById(R.id.listView1);
 		listView.setAdapter(listViewAdapter);
+		
+		printButton = (Button) findViewById(R.id.printButton);
+		printButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Log.d("ListDragAndDrop", listViewAdapter.toString());
+			}
+		});
+		
 		fillAdapter();
 	}
 
@@ -42,5 +57,7 @@ public class MainActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
+	
+	
 
 }

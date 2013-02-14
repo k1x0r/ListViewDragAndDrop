@@ -15,7 +15,8 @@ public class ListViewAdapter extends BaseAdapter {
     private LinkedList<ListViewData> list;
 	private Context context;
 
-    public ListViewAdapter(Context context)
+
+	public ListViewAdapter(Context context)
     {
 		this.context = context;
     	list = new LinkedList<ListViewData>();   	
@@ -27,16 +28,12 @@ public class ListViewAdapter extends BaseAdapter {
     }
     
     public void replace(ListViewData el1, ListViewData el2) {
-    	
-    	System.out.println(list);
-    	
+    	    	
     	int index1 = list.indexOf(el1);
     	int index2 = list.indexOf(el2);
     	list.set(index1, el2);
     	list.set(index2, el1);
-    	
-    	System.out.println(index1 + " " + index2 + " " + list);
-    	
+       	
     	notifyDataSetChanged();
     }
     
@@ -77,6 +74,12 @@ public class ListViewAdapter extends BaseAdapter {
 		
 		return tweetItem;
 	}
+	
+    @Override
+	public String toString() {
+		return list.toString();
+	}
+
 	
 }
 

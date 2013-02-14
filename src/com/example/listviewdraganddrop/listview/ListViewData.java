@@ -12,8 +12,6 @@ public class ListViewData {
 		this.text = text;
 	}
 	
-
-
 	public Bitmap getBitmap() {
 		return bitmap;
 	}
@@ -40,5 +38,10 @@ public class ListViewData {
 	@Override
 	public int hashCode() {
 		return text.hashCode();
+	}
+	
+	@Override
+	public String toString() {
+		return text;
 	}
 }
